@@ -6,63 +6,102 @@
     <title>BARROWOW</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Montserrat', sans-serif;
             line-height: 1.6;
             color: #f4f4f4;
             max-width: 800px;
             margin: 0 auto;
             padding: 20px;
-            background-color: #121212;
+            background-color: #1a1a1a;
+            transition: background-color 0.5s ease;
         }
         header {
             text-align: center;
             padding: 20px 0;
-            background-color: #1e1e1e;
-            box-shadow: 0 2px 5px rgba(255,255,255,0.1);
         }
-        nav {
-            display: flex;
-            justify-content: center;
-            margin-top: 20px;
-        }
-        nav a {
-            margin: 0 15px;
-            text-decoration: none;
-            color: #f4f4f4;
-            transition: color 0.3s ease;
-        }
-        nav a:hover {
-            color: #007bff;
+        h1 {
+            font-weight: 100;
+            font-size: 3em;
+            letter-spacing: 0.2em;
+            margin: 0;
+            background: linear-gradient(45deg, #00ffff, #ff00ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: gradientShift 5s ease infinite;
         }
         .content {
-            background-color: #1e1e1e;
+            background-color: rgba(255, 255, 255, 0.1);
             padding: 20px;
             margin-top: 20px;
-            box-shadow: 0 2px 5px rgba(255,255,255,0.1);
-        }
-        .feature {
-            margin-bottom: 20px;
-        }
-        .feature h2 {
-            color: #007bff;
-        }
-        footer {
-            text-align: center;
-            margin-top: 20px;
-            padding: 10px;
-            background-color: #1e1e1e;
-            box-shadow: 0 -2px 5px rgba(255,255,255,0.1);
+            backdrop-filter: blur(5px);
         }
         .interactive-button {
-            background-color: #007bff;
-            color: #fff;
-            border: none;
+            background-color: transparent;
+            color: #f4f4f4;
+            border: 1px solid #00ffff;
             padding: 10px 20px;
             cursor: pointer;
-            transition: background-color 0.3s ease;
+            transition: all 0.3s ease;
+            font-weight: 400;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
         }
         .interactive-button:hover {
-            background-color: #0056b3;
+            background-color: #00ffff;
+            color: #1a1a1a;
+        }
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }{
+            font-family: 'Montserrat', sans-serif;
+            line-height: 1.6;
+            color: #f4f4f4;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #1a1a1a;
+            transition: background-color 0.5s ease;
+        }
+        header {
+            text-align: center;
+            padding: 20px 0;
+        }
+        h1 {
+            font-weight: 100;
+            font-size: 3em;
+            letter-spacing: 0.2em;
+            margin: 0;
+            background: linear-gradient(45deg, #00ffff, #ff00ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: gradientShift 5s ease infinite;
+        }
+        .content {
+            background-color: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            margin-top: 20px;
+            backdrop-filter: blur(5px);
+        }
+        .interactive-button {
+            background-color: transparent;
+            color: #f4f4f4;
+            border: 1px solid #00ffff;
+            padding: 10px 20px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 400;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+        .interactive-button:hover {
+            background-color: #00ffff;
+            color: #1a1a1a;
+        }
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
         }
     </style>
 </head>
@@ -107,21 +146,97 @@
         });
 
         // Function to change background color
+        <script>
         function changeColor() {
-            const colors = ['#121212', '#1a1a1a', '#222222', '#2a2a2a', '#333333'];
+            const colors = [
+                '#1a1a1a', '#2a2a2a', '#3a3a3a',
+                '#4a0e1c', '#0e4a1c', '#0e1c4a',
+                '#4a1c0e', '#1c4a0e', '#1c0e4a'
+            ];
             const randomColor = colors[Math.floor(Math.random() * colors.length)];
             document.body.style.backgroundColor = randomColor;
+            
+            // Add a subtle glow effect
+            document.body.style.boxShadow = `0 0 100px ${randomColor}`;
+            setTimeout(() => {
+                document.body.style.boxShadow = 'none';
+            }, 500);
         }
 
         // Function to show random fact
         function showRandomFact() {
             const facts = [
-                "The first computer programmer was a woman named Ada Lovelace.",
-                "The first computer bug was an actual bug (a moth) found in a computer.",
-                "The most popular programming language is JavaScript.",
-                "The first website is still online: http://info.cern.ch/",
-                "The term 'debugging' originated from removing an actual moth from a computer."
-            ];
+    "The QWERTY keyboard layout was designed to slow down typing, not speed it up.",
+    "The first computer mouse was made of wood.",
+    "Ada Lovelace, the world's first computer programmer, was also a talented musician.",
+    "The first webcam was invented to monitor a coffee pot at the University of Cambridge.",
+    "FORTRAN, one of the oldest programming languages, is still used today in weather forecasting.",
+    "The concept of 'pair programming' originated from ancient Egyptian scribes who worked in pairs.",
+    "The first computer virus was created as an experiment in self-replicating programs.",
+    "The 'Space Invaders' game caused a shortage of 100-yen coins in Japan when it was released.",
+    "The first computer-to-computer communication happened over ARPANET in 1969 and crashed after just two letters: 'LO'.",
+    "The programming language Brainfuck was created as a challenge to make the smallest possible compiler.",
+    "The first computer game, 'Spacewar!', was developed in 1962 at MIT.",
+    "The '@' symbol in email addresses was chosen by Ray Tomlinson because it was rarely used.",
+    "Python is named after Monty Python, not the snake.",
+    "Grace Hopper coined the term 'bug' after finding an actual moth in a relay.",
+    "The 'Konami Code' originated from the game Gradius when the developer found it too difficult to play test.",
+    "The Agile Manifesto was written by 17 software developers over a weekend ski trip.",
+    "Photoshop's first version was developed by two brothers, John and Thomas Knoll.",
+    "The Y2K bug was predicted in 1993 by Peter de Jager in a Computerworld article.",
+    "HTTP 418 'I'm a teapot' is an April Fools' joke status code.",
+    "The first computer password was likely 'computer', used on MIT's CTSS system in 1961.",
+    "The 'Trojan Room Coffee Pot', subject of the first webcam, sold on eBay for £3,350 in 2001.",
+    "Java was originally named 'Oak', after a tree outside the developer's office.",
+    "The first commercial spam email was sent in 1978 by a Digital Equipment Corporation marketer.",
+    "Turbo buttons on old PCs actually slowed the computer down for compatibility with older software.",
+    "The first computer-animated sequence in a feature film was in 'Westworld' (1973).",
+    "The Homebrew Computer Club, where Apple co-founder Steve Wozniak showcased his Apple I, met in a garage.",
+    "The first computer to sing was an IBM 7094 in 1961, singing 'Daisy Bell'.",
+    "BASIC was originally designed for non-science students to use computers more easily.",
+    "The first open-source software license was created by MIT in 1985.",
+    "'Green code' in The Matrix is actually scanned sushi recipes.",
+    "CSIRAC, Australia's first digital computer, played music in 1951.",
+    "'Intel Inside' jingle is composed of only five notes.",
+    "A computer program once passed the Turing Test by pretending to be a 13-year-old boy from Ukraine.",
+    "'Agner Krarup Erlang' is who the programming language Erlang is named after.",
+    "'Creeper', often considered the first computer worm, was created in 1971 by Bob Thomas at BBN.",
+    "'Colonel Bogey March' was played by CSIRAC, the first computer to play music in 1951.",
+    "'Morris Worm', one of the first worms distributed via the Internet, was accidentally released in 1988.",
+    "'Futureworld' (1976) featured the first computer-generated planet in a movie.",
+    "'Duff's Device', an optimization technique in C, was discovered by accident by Tom Duff in 1983.",
+    "'Toy Story' (1995) was the first full-length computer-generated feature film ever made.",
+    "'Operation Match', the first computer dating service, was created by Harvard students in 1965.",
+    "'Halt and Catch Fire' instruction (HCF) causes the computer to stop functioning completely.",
+    "'Watson', IBM's supercomputer, defeated human champions on Jeopardy! in 2011.",
+    "'Lenna', widely used for image processing algorithms, is from a Playboy centerfold from 1972.",
+    "'Tin Toy', Pixar's short film from 1988, won an Academy Award for Best Animated Short Film.", 
+	"The original name for JavaScript was Mocha before it became LiveScript and then JavaScript.", 
+	"Computer scientist Donald Knuth invented 'literate programming', which combines documentation and source code.", 
+	"The term 'byte' originally referred to a set of binary digits that could represent a single character.", 
+	"The world's first website (http://info.cern.ch/) is still online and maintained by CERN.", 
+	"Google's original name was Backrub before it became Google.", 
+	"Linux is named after its creator Linus Torvalds but also pays homage to MINIX.", 
+	"The term 'hacker' originally referred to someone who enjoyed exploring and tinkering with systems.", 
+	"The original iPod had only five buttons and could hold about 1,000 songs.", 
+	"The term 'robotics' comes from Karel Čapek's play R.U.R. (Rossum's Universal Robots) written in 1920.", 
+	"Facebook's initial launch date was February 4th, 2004; it started as 'thefacebook.com'.", 
+	"The Raspberry Pi project started as an educational tool to teach kids programming skills.", 
+	"Microsoft Word's original name was Multi-Tool Word before it became Word.", 
+	"HTML stands for HyperText Markup Language and is used for creating web pages.", 
+	"The world's largest collection of vintage computers can be found at The Computer History Museum in California.", 
+	"The programming language Lisp has been around since 1958 and is known for its unique parenthesis-heavy syntax.", 
+	"NASA uses Fortran for many of its legacy systems despite being over six decades old.", 
+	"CSS (Cascading Style Sheets) allows web developers to separate content from design for easier maintenance.", 
+	"Video games are now considered an art form and have been included as part of museum exhibitions worldwide.", 
+	"The world's most expensive domain name ever sold is cars.com for $872 million.", 
+	"Machine learning algorithms can predict diseases based on patterns found within vast datasets.", 
+	"Quantum computing promises to revolutionize computing power beyond classical computers’ capabilities.", 
+	"The concept of virtual reality dates back to the early 1960s with Morton Heilig's Sensorama machine.", 
+	"The concept of cloud computing allows users to access data and applications over the internet instead of local storage.",  
+	"Augmented reality overlays digital information onto real-world environments using devices like smartphones or smart glasses.",  
+	"Artificial intelligence has been integrated into various industries including healthcare, finance, and transportation."  
+];
             const randomFact = facts[Math.floor(Math.random() * facts.length)];
             document.getElementById('randomFact').textContent = randomFact;
         }

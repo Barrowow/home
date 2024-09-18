@@ -3,22 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Minimalist Website</title>
+    <title>BARROWOW</title>
     <style>
         body {
             font-family: Arial, sans-serif;
             line-height: 1.6;
-            color: #333;
+            color: #f4f4f4;
             max-width: 800px;
             margin: 0 auto;
             padding: 20px;
-            background-color: #f4f4f4;
+            background-color: #121212;
         }
         header {
             text-align: center;
             padding: 20px 0;
-            background-color: #fff;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            background-color: #1e1e1e;
+            box-shadow: 0 2px 5px rgba(255,255,255,0.1);
         }
         nav {
             display: flex;
@@ -28,17 +28,17 @@
         nav a {
             margin: 0 15px;
             text-decoration: none;
-            color: #333;
+            color: #f4f4f4;
             transition: color 0.3s ease;
         }
         nav a:hover {
             color: #007bff;
         }
         .content {
-            background-color: #fff;
+            background-color: #1e1e1e;
             padding: 20px;
             margin-top: 20px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            box-shadow: 0 2px 5px rgba(255,255,255,0.1);
         }
         .feature {
             margin-bottom: 20px;
@@ -50,40 +50,49 @@
             text-align: center;
             margin-top: 20px;
             padding: 10px;
-            background-color: #fff;
-            box-shadow: 0 -2px 5px rgba(0,0,0,0.1);
+            background-color: #1e1e1e;
+            box-shadow: 0 -2px 5px rgba(255,255,255,0.1);
+        }
+        .interactive-button {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .interactive-button:hover {
+            background-color: #0056b3;
         }
     </style>
 </head>
 <body>
     <header>
-        <h1>Minimalist Website</h1>
+        <h1>BARROWOW</h1>
         <nav>
             <a href="#home">Home</a>
             <a href="#about">About</a>
-            <a href="#contact">Contact</a>
+            <a href="contact.html">Contact</a>
         </nav>
     </header>
 
     <div class="content">
         <section id="home" class="feature">
             <h2>Welcome</h2>
-            <p>This is a minimalist website with clean design and essential features.</p>
+            <p>This is my first website and I'm currently building it from scratch features.</p>
+            <button class="interactive-button" onclick="changeColor()">Change Color</button>
         </section>
 
         <section id="about" class="feature">
-            <h2>About Us</h2>
-            <p>We believe in simplicity and efficiency. Our goal is to provide a seamless user experience.</p>
-        </section>
-
-        <section id="contact" class="feature">
-            <h2>Contact</h2>
-            <p>Get in touch with us at: contact@minimalist.com</p>
+            <h2>About Me</h2>
+            <p>Just playing games and study</p>
+            <button class="interactive-button" onclick="showRandomFact()">Random Fact</button>
+            <p id="randomFact"></p>
         </section>
     </div>
 
     <footer>
-        <p>&copy; 2024 Minimalist Website. All rights reserved.</p>
+        <p>&copy; 2024 BARROWOW All rights reserved.</p>
     </footer>
 
     <script>
@@ -96,6 +105,26 @@
                 });
             });
         });
+
+        // Function to change background color
+        function changeColor() {
+            const colors = ['#121212', '#1a1a1a', '#222222', '#2a2a2a', '#333333'];
+            const randomColor = colors[Math.floor(Math.random() * colors.length)];
+            document.body.style.backgroundColor = randomColor;
+        }
+
+        // Function to show random fact
+        function showRandomFact() {
+            const facts = [
+                "The first computer programmer was a woman named Ada Lovelace.",
+                "The first computer bug was an actual bug (a moth) found in a computer.",
+                "The most popular programming language is JavaScript.",
+                "The first website is still online: http://info.cern.ch/",
+                "The term 'debugging' originated from removing an actual moth from a computer."
+            ];
+            const randomFact = facts[Math.floor(Math.random() * facts.length)];
+            document.getElementById('randomFact').textContent = randomFact;
+        }
     </script>
 </body>
 </html>
